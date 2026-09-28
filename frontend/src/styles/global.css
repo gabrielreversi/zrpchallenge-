@@ -1,0 +1,259 @@
+:root {
+  --bg0: #e8eef2;
+  --bg1: #f7f4ef;
+  --ink: #1a2330;
+  --muted: #5c6775;
+  --accent: #0f5c4c;
+  --accent-soft: #d8ebe5;
+  --danger: #9b1c1c;
+  --danger-bg: #fde8e8;
+  --success: #0f6b3a;
+  --success-bg: #e3f6ea;
+  --card: rgba(255, 255, 255, 0.78);
+  --line: rgba(26, 35, 48, 0.12);
+  --radius: 14px;
+  --font: 'DM Sans', sans-serif;
+  --display: 'Fraunces', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #c5d8e4 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #e4d7c5 0%, transparent 50%),
+    linear-gradient(160deg, var(--bg0), var(--bg1));
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.page--center {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.login-card,
+.page-panel {
+  width: min(720px, 100%);
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.display {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 0.5rem;
+  line-height: 1.15;
+}
+
+.display--sm {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.field span,
+.upload__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.field input,
+.field textarea,
+.upload input[type='file'] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.topbar__brand {
+  font-family: var(--display);
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.topbar__tabs {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.tab {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.tab--active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.shell__main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.upload {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.file-list {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--ink);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.banner {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.banner--success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.banner--error {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.results {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.results h2 {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.candidate {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.candidate header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.candidate h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.rank {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.candidate p {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--ink);
+}
